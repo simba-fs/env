@@ -1,6 +1,7 @@
 {
   "name": "@simba.fs/env",
   "private": false,
+  "public": true,
   "version": "1.0.0",
   "description": "get env",
   "main": "env.js",
