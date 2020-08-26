@@ -1,0 +1,25 @@
+{
+  "name": "@simba.fs/env",
+  "version": "1.0.0",
+  "description": "get env",
+  "main": "env.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simba-fs/env.git"
+  },
+  "keywords": [
+    "dotenv"
+  ],
+  "author": "simba-fs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simba-fs/env/issues"
+  },
+  "homepage": "https://github.com/simba-fs/env#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
