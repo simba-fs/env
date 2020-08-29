@@ -1,19 +1,19 @@
-require('dotenv').config();
+const dotenv = require('dotenv');
 
-function setup(defaultEnv={}){
-	return function getEnv(env=''){
-		if(process.env[env]) return process.env[env];
-		let defaultValue = defaultEnv[env];
-		if(!defaultValue) return undefined;
-
-		let arg = defaultValue.match(/\[([\w]*)\]/);
-
-		if(arg) for(let i = 1; i < arg.length; i++){
-			defaultValue = defaultValue.replace(`[${arg[i]}]`, getEnv(arg[i]));
-		}
-
-		return defaultValue;
+/**
+ *	init env with default value
+ *	@param {Object} defaultValue - env in key-value pair
+ *	@return {Object} process.env
+ */
+function init(defaultValue){
+	dotenv.config();
+	for(let i in defaultValue){
+		if(!process.env[i]) process.env[i] = defaultValue[i];
 	}
+	return process.env;
 }
 
-module.exports = setup;
+module.exports = {
+	...dotenv,
+	init
+};
